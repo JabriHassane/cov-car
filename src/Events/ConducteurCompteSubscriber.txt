@@ -1,0 +1,68 @@
+<?php
+
+namespace App\Events;
+
+use ApiPlatform\Core\EventListener\EventPriorities;
+use App\Entity\Compte;
+use App\Entity\Conducteur;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Symfony\Component\HttpKernel\Event\ViewEvent ;
+use Symfony\Component\HttpKernel\KernelEvents;
+use Symfony\Component\Security\Core\Security;
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
+
+class ConducteurCompteSubscriber implements EventSubscriberInterface{
+
+    private $security;
+    private $entityManager;
+    private $auth;
+    public function __construct(Security $security,  EntityManagerInterface $entityManager, AuthorizationCheckerInterface $checker)
+    {
+        $this->security=$security;
+        $this->entityManager = $entityManager;
+        $this->auth=$checker;
+    }
+    public static function getSubscribedEvents()
+    {
+        return[
+            KernelEvents::VIEW => ['setCompteForConducteur', EventPriorities::PRE_VALIDATE]
+        ];
+
+    }
+
+    
+
+    // MINE t ajouté chiii conducteur directement ka ytzad id_compte 3la 7ssab dak user li dar Logine
+    
+    public function setCompteForConducteur(ViewEvent $event ){
+
+
+        $em=$this->entityManager;
+        $query = $em->createQueryBuilder()
+        ->select("v")
+        ->from('App\Entity\Vehicule','v')
+        ->where("v.id= 14")
+        ->getQuery()
+        ->getResult();
+       
+        //dd($query);
+        $compte= $event->getControllerResult();
+        $conduc= $event->getControllerResult();
+        $method=$event->getRequest()->getMethod();
+        $em=$this->entityManager;
+
+        if($compte instanceof Compte &&
+        !$this->auth->isGranted("voyageur") &&
+         $method === "POST"){
+          $conduc =new Conducteur;
+          $conduc-> setCin("fzz");
+          $conduc-> setTel(060000000);
+          $conduc-> setSexe("Male");
+          $conduc -> setCompte($compte);
+        //   $conduc -> setVehicule($query);
+          $em->persist($conduc);
+          $em->flush();
+         }
+        }
+    }

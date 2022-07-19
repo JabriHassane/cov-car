@@ -1,0 +1,35 @@
+ul#myList {
+    list-style-type:none;
+  }
+  #btn_reserver{
+    margin-left: 70%;
+  }
+  ul#carousel{
+    margin-left: -15%;
+  }
+  span.sp{
+    color: black;
+    text-decoration: underline;
+  }
+  span#count{
+    color: #2BC4F0;
+    text-decoration: underline;
+  }
+  span#user{
+    color: 	#2BC4F0;
+    text-decoration: underline;
+    text-justify: kashida;
+  }
+  span#nom{
+    color: white;
+    text-justify: kashida;
+  }
+  .quotes{
+    color: white;
+  }
+
+  #slider{
+    /* background-image: url("../../img/blabla2.png");
+    background-repeat: no-repeat; */
+    
+  }

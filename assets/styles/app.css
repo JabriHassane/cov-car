@@ -1,0 +1,10 @@
+body {
+    background-color: lightgray;
+    background-image: url("../img/blabla2.png");
+    background-repeat: no-repeat;
+    /* background-position: boo; */
+}
+/* .slider{
+    background-image: url("../img/blabla2.png");
+    background-repeat: no-repeat;
+} */

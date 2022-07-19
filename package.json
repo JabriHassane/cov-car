@@ -1,0 +1,44 @@
+{
+    "devDependencies": {
+        "@babel/preset-react": "^7.0.0",
+        "@symfony/stimulus-bridge": "^2.0.0",
+        "@symfony/webpack-encore": "^1.8.2",
+        "core-js": "^3.0.0",
+        "regenerator-runtime": "^0.13.2",
+        "stimulus": "^2.0.0",
+        "webpack-notifier": "^1.6.0"
+    },
+    "license": "UNLICENSED",
+    "private": true,
+    "scripts": {
+        "dev-server": "encore dev-server --port 8080",
+        "dev": "encore dev",
+        "watch": "encore dev --watch",
+        "build": "encore production --progress"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-svg-core": "^1.2.35",
+        "@fortawesome/free-brands-svg-icons": "^5.15.3",
+        "@fortawesome/free-regular-svg-icons": "^5.15.3",
+        "@fortawesome/free-solid-svg-icons": "^5.15.3",
+        "@fortawesome/react-fontawesome": "^0.1.14",
+        "@material-ui/core": "^4.11.4",
+        "antd": "^4.15.6",
+        "axios": "^0.21.1",
+        "bootstrap": "^4.6.0",
+        "jquery": "^3.6.0",
+        "jwt-decode": "^3.1.2",
+        "moment": "^2.29.1",
+        "react": "^16.8.6",
+        "react-bootstrap": "^1.5.2",
+        "react-calendar": "^3.4.0",
+        "react-dom": "^16.8.6",
+        "react-helmet": "^6.1.0",
+        "react-router-dom": "^5.2.0",
+        "react-select": "^4.3.1",
+        "react-toastify": "^7.0.4",
+        "react-tooltip": "^4.2.21",
+        "reactstrap": "^8.9.0",
+        "sweetalert2": "^11.0.18"
+    }
+}
